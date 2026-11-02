@@ -5,9 +5,9 @@ tasty_bytes:
       type: snowflake
       account: 'not needed'
       user: 'not needed'
-      role: accountadmin
+      role: "{{ env_var('DBT_DEV_ROLE') }}"
       database: tasty_bytes_dbt_db
-      schema: dev
+      schema: "{{ env_var('DBT_DEV_SCHEMA') }}"
       warehouse: tasty_bytes_dbt_wh
       threads: 8
     prod:

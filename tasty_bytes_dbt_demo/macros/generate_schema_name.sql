@@ -5,9 +5,13 @@
 
         {{ default_schema }}
 
-    {%- else -%}
+    {%- elif target.name == 'prod' -%}
 
         {{ custom_schema_name | trim }}
+
+    {%- else -%}
+
+        {{ default_schema }}_{{ custom_schema_name | trim }}
 
     {%- endif -%}
 
