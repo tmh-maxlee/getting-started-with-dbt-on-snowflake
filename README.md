@@ -45,13 +45,13 @@ profile target. Snowflake resolves `tasty_bytes_dbt_demo/env.yml` before dbt sta
 
 | Variable | Value |
 | --- | --- |
-| `DBT_DEV_SCHEMA` | `DBT_<sanitized username>_<8-character username hash>` |
+| `DBT_DEV_SCHEMA` | `DEV_<sanitized username>` (for example, `DEV_TMHMAXLEE`) |
 | `DBT_DEV_ROLE` | The active Snowflake session role |
 
 For example, users `ALICE` and `BOB` automatically receive different schemas in
 `TASTY_BYTES_DBT_DB`. No developer names or credentials need to be committed, and
-adding another developer does not require a configuration change. The hash avoids
-ordinary collisions when punctuation in usernames is replaced with underscores.
+adding another developer does not require a configuration change. Ensure usernames
+remain distinct when punctuation is replaced with underscores.
 Use separate Snowflake users; sharing a login also shares the development schema.
 
 1. Select your development role and `TASTY_BYTES_DBT_WH` in your Snowflake workspace.
@@ -83,7 +83,7 @@ dbt, configure your own authenticated `profiles.yml` with these same `env_var`
 references and export both variables in your shell, for example in PowerShell:
 
 ```powershell
-$env:DBT_DEV_SCHEMA = 'DBT_ALICE' # Developer two uses DBT_BOB; use your own unique name.
+$env:DBT_DEV_SCHEMA = 'DEV_ALICE' # Developer two uses DEV_BOB; use your own unique name.
 $env:DBT_DEV_ROLE = 'YOUR_DEVELOPMENT_ROLE'
 ```
 
