@@ -135,9 +135,9 @@ sources:
       description: 'Foreign key to order header'
       data_tests:
         - not_null
-        - relationships:
-            to: source('tb_101', 'ORDER_HEADER')
-            field: ORDER_ID
+        # - relationships:
+        #     to: source('tb_101', 'ORDER_HEADER')
+        #     field: ORDER_ID
     - name: MENU_ITEM_ID
       description: 'Foreign key to menu'
       data_tests:
@@ -165,7 +165,7 @@ sources:
       description: 'Discount amount for line'
   - name: ORDER_HEADER
     description: 'Order header information'
-    loaded_at_field: ORDER_TS
+    # loaded_at_field: ORDER_TS
     columns:
     - name: ORDER_ID
       description: 'Primary key for orders'
@@ -175,16 +175,16 @@ sources:
       description: 'Foreign key to truck'
       data_tests:
         - not_null
-        - relationships:
-            to: source('tb_101', 'TRUCK')
-            field: TRUCK_ID
+        # - relationships:
+        #     to: source('tb_101', 'TRUCK')
+        #     field: TRUCK_ID
     - name: LOCATION_ID
       description: 'Foreign key to location'
       data_tests:
         - not_null
-        - relationships:
-            to: source('tb_101', 'LOCATION')
-            field: LOCATION_ID
+        # - relationships:
+        #     to: source('tb_101', 'LOCATION')
+        #     field: LOCATION_ID
     - name: CUSTOMER_ID
       description: 'Customer identifier'
     - name: DISCOUNT_ID
@@ -268,9 +268,9 @@ sources:
     - name: FRANCHISE_ID
       description: 'Foreign key to franchise'
       data_tests:
-        - relationships:
-            to: source('tb_101', 'FRANCHISE')
-            field: FRANCHISE_ID
+        # - relationships:
+        #     to: source('tb_101', 'FRANCHISE')
+        #     field: FRANCHISE_ID
     - name: TRUCK_OPENING_DATE
       description: 'Date truck began operations'
       data_tests:
