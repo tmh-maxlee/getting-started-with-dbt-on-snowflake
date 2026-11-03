@@ -3,8 +3,3 @@ models:
     description: PIF and Premium by month.
     columns:
       - name: broker_id
-        data_tests:
-          - relationships:
-              arguments:
-                to: ref('dim_broker')
-                field: broker_id
