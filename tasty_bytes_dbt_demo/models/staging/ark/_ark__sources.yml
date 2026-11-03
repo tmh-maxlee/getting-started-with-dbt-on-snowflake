@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: ark
+    description: Sapiens source tables replicated into Snowflake.
+    database: raw
+    schema: ark
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+    tables:
+      - name: policy
+        identifier: policy
+        description: Source policy table for the proof of concept.
+      - name: policy_bdx
+        identifier: policy_bdx
+        description: Source policy table for the proof of concept.

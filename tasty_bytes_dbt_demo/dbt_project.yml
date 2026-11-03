@@ -17,14 +17,40 @@ target-path: target
 clean-targets: [target, dbt_modules]
 
 ## Models
+# models:
+#   tasty_bytes:
+#     staging:
+#       +schema: bronze
+#       +materialized: view
+#     intermediate:
+#       +schema: silver
+#       +materialized: view
+#     marts:
+#       +schema: gold
+#       +materialized: table
+
 models:
   tasty_bytes:
     staging:
+      +materialized: view
       +schema: bronze
-      +materialized: view
+      +tags: ["staging", "bronze"]
+
     intermediate:
-      +schema: silver
       +materialized: view
-    marts:
-      +schema: gold
+      conformed:
+        +schema: silver_prep
+        +tags: ["intermediate", "prepare_conformed", "silver_prep"]
+      marts:
+        +schema: gold_prep
+        +tags: ["intermediate", "prepare_marts", "gold_prep"]
+
+    conformed:
       +materialized: table
+      +schema: silver
+      +tags: ["conformed", "silver"]
+
+    marts:
+      +materialized: table
+      +schema: gold
+      +tags: ["marts", "gold"]

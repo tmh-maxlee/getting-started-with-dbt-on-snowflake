@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: int_conformed_policy
+    description: >-
+      Silver policy model.
+    columns: []

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_ark__policy
+    description: >-
+      Passthrough staging view of ark.public.policy in Snowflake.
+      Preserves source rows and columns without joins, filters, or aggregation.
+      Explicit column mappings, grain documentation, and key tests should be
+      added once the source structure has been reviewed.
+    columns: []
+  - name: stg_ark__policy_bdx
+    description: >-
+      Passthrough staging view of ark.public.policy_bdx in Snowflake.
+      Preserves source rows and columns without joins, filters, or aggregation.
+      Explicit column mappings, grain documentation, and key tests should be
+      added once the source structure has been reviewed.
+    columns: []

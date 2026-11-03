@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: sapiens
+    description: Sapiens source tables replicated into Snowflake.
+    database: raw
+    schema: sapiens
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+    tables:
+      - name: policy
+        identifier: policy
+        description: Source policy table for the proof of concept.

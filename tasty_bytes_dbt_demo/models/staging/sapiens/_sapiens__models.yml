@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_sapiens__policy
+    description: >-
+      Passthrough staging view of sapiens.public.policy in Snowflake.
+      Preserves source rows and columns without joins, filters, or aggregation.
+      Explicit column mappings, grain documentation, and key tests should be
+      added once the source structure has been reviewed.
+    columns: []
