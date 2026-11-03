@@ -14,8 +14,8 @@ tasty_bytes:
       type: snowflake
       account: 'not needed'
       user: 'not needed'
-      role: accountadmin
-      database: tasty_bytes_dbt_db
+      role: "{{ env_var('DBT_PROD_ROLE') }}"
+      database: "{{ env_var('DBT_PROD_DATABASE') }}"
       schema: gold
-      warehouse: tasty_bytes_dbt_wh
+      warehouse: "{{ env_var('DBT_PROD_WAREHOUSE') }}"
       threads: 8
